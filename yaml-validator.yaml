@@ -1,0 +1,29 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pearl-jmeter-reader
+  namespace: pearl-jmeter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+  - kind: Group
+    namespace: pearl-jmeter
+    name: b116b0be-2016-4ac5-96b6-9c31672dac59
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pearl-jmeter-contrib
+  namespace: pearl-jmeter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: edit
+subjects:
+  - kind: Group
+    namespace: pearl-jmeter
+    name: 419a3238-de45-4583-ba94-bf7619636ad7
